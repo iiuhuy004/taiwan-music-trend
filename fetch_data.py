@@ -1,10 +1,11 @@
 import requests
+import os
 from supabase import create_client
 from datetime import date
 
 # Supabase 設定
-SUPABASE_URL = "https://akqeufbhwqkseazfozyu.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrcWV1ZmJod3Frc2VhemZvenl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyMDk0MDEsImV4cCI6MjA5NTc4NTQwMX0.mphDsRtAj74Okw5HQqNwEOFa_9E-2wVuhPC45RI_Y4k"
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://akqeufbhwqkseazfozyu.supabase.co")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrcWV1ZmJod3Frc2VhemZvenl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyMDk0MDEsImV4cCI6MjA5NTc4NTQwMX0.mphDsRtAj74Okw5HQqNwEOFa_9E-2wVuhPC45RI_Y4k")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
