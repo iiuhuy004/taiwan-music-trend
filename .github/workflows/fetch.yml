@@ -2,15 +2,15 @@ name: Daily Fetch
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # 台灣時間每天午夜12點
-  workflow_dispatch:  # 允許手動觸發
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install requests supabase
